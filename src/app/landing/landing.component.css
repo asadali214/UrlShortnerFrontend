@@ -1,0 +1,33 @@
+.fieldsDiv{
+    text-align: center;
+    background-color: rgb(162, 206, 214);
+    color: rgb(13, 11, 151);
+    height: 170px;
+    font-size: 25px;
+    padding-top: 15px;
+}
+.longlinkDiv{
+    text-align: left;
+    width: 50%;
+    display: inline-block
+}
+
+.shortenButtonDiv{
+    width:20%;
+    display: inline-block
+}
+
+.btn-shorten{
+    margin-left: 4%;
+}
+
+.shortlinkDiv{
+    width: 71%;
+    margin-left: 1%;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.tab{
+    margin-top: 2%
+}
