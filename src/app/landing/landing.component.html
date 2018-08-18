@@ -3,14 +3,14 @@
 
     <div class="longlinkDiv">
       <label>Shorten your links:</label>
-      <input type="text" [(ngModel)]="long" class="form-control" placeholder="Enter long url to shorten" (click)=clearLong()>
+      <input type="text" [(ngModel)]="long" class="form-control {{linkbar}}" placeholder="Enter long url to shorten" (click)=clearLong()>
     </div>
     <div class="shortenButtonDiv">
       <button class="btn btn-outline-success btn-block btn-shorten myButton" (click)=addLongUrl()>Shorten Link</button>
     </div>
     <div class="shortlinkDiv">
       <a class="{{linkbar}}" href="{{short}}" target="_blank">
-        <input type="text" class="form-control linkGreen" value={{short}} disabled>
+        <input type="text" class="form-control linkGreen {{linkbar}}" value={{short}} disabled>
       </a>
     </div>
 
@@ -21,25 +21,25 @@
     <table class="table myTable">
       <thead class="myThead">
         <tr>
-          <th class="myTheadCol" scope="col">#</th>
-          <th class="myTheadCol" scope="col">Original URL</th>
-          <th class="myTheadCol" scope="col">Short URL</th>
-          <th class="myTheadCol" scope="col">Created On</th>
-          <th class="myTheadCol" scope="col">Valid for</th>
-          <th class="myTheadCol" scope="col">Clicks#</th>
+          <th class="myTheadCol myColNum" scope="col">#</th>
+          <th class="myTheadCol myColUrlLong" scope="col">Original URL</th>
+          <th class="myTheadCol myColUrlShort" scope="col">Short URL</th>
+          <th class="myTheadCol myColDate" scope="col">Created On</th>
+          <th class="myTheadCol myColValid" scope="col">Valid for</th>
+          <th class="myTheadCol myColClick" scope="col">Clicks#</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="myTr" *ngFor="let url of urls;let rowNum=index;">
+        <tr class="myRow" *ngFor="let url of urls;let rowNum=index;">
           <td class="myCol">{{rowNum+1}}</td>
-          <td class="myCol myColWidth">{{url.longUrl}}</td>
+          <td class="myCol">{{url.longUrl}}</td>
           <td class="myCol">
-            <a class="linkGreen" routerLink="/dashboard">
+            <a class="linkGreen" routerLink="/dashboard/{{rowNum}}">
               {{url.shortUrl}}
             </a>
           </td>
-          <td class="myCol myColWidth">{{url.dateCreated}}</td>
-          <td class="myCol myColWidth">{{url.expiryDays}} days</td>
+          <td class="myCol">{{url.dateCreated}}</td>
+          <td class="myCol">{{url.expiryDays}} days</td>
           <td class="myCol">{{url.clicks.length}}</td>
         </tr>
       </tbody>

@@ -44,38 +44,69 @@
     border: solid black 2px;
     border-radius: 10px;
     -moz-border-radius: 15px;
+    table-layout: fixed;
+    width: 100%;
 }
 
-.myCol {
-    border-top: solid black 1px;
-    border-bottom: solid black 1px;
-    border-left: solid black 2px;
-}
-
-.myTheadCol {
-    border-bottom: solid black 5px;
-}
 
 .myThead {
     background-color: rgb(42, 112, 153);
     color: azure;
 }
 
-.myTr:hover {
+.myRow:hover {
     background-color: rgb(185, 218, 224);
 }
 
-.myColWidth {
-    min-width: 130px;
+.myTheadCol {
+    border-bottom: solid black 5px;
+    overflow: hidden;
 }
 
+.myCol {
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    border-left: solid black 2px;
+    overflow: hidden;
+}
+
+.myColDate {
+    width: 10%;
+}
+.myColValid {
+    width: 7%;
+}
+
+.myColUrlLong {
+    width: 50%;
+}
+
+.myColUrlShort {
+    width: 23%;
+}
+
+.myColNum {
+    width: 3%;
+}
+
+.myColClick {
+    width: 7%;
+}
 
 .linkGreen {
     color: rgb(19, 160, 15);
     font-weight: bolder
 }
 
-.disabled {
+a.disabled {
     pointer-events: none;
     cursor: default;
- }
+}
+
+input.disabled{
+    border: solid rgb(226, 22, 15) 2px;
+}
+
+input.enabled{
+    border: solid rgb(35, 180, 22) 2px;
+}

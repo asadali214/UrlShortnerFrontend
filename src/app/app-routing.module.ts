@@ -8,7 +8,7 @@ import { ExpiryComponent } from './expiry/expiry.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingComponent },
-  { path: 'dashboard', component: InfoDashboardComponent },
+  { path: 'dashboard/:id', component: InfoDashboardComponent },
   { path: 'expired', component: ExpiryComponent }
 ];
  
