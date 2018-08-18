@@ -1,0 +1,12 @@
+.myDiv{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: brown;
+    margin-top: 10%;
+}
+
+.myButton{
+    font-size: 30px;
+    font-weight: bold;
+}

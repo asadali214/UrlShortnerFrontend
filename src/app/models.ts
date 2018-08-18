@@ -15,6 +15,15 @@ export class Url {
     clicks: Click[];
 }
 
+export class LongUrl {
+    longUrl: string;
+    expiryDays: number;
+    constructor(long: string ,expiry: number){
+        this.longUrl=long;
+        this.expiryDays=expiry;
+    }
+}
+
 export class DateStats {
     labels: string[];
     data: number[];

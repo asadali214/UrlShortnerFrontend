@@ -10,12 +10,18 @@
 .longlinkDiv {
     text-align: left;
     width: 50%;
+    font-weight: 900;
     display: inline-block
 }
 
 .shortenButtonDiv {
     width: 20%;
-    display: inline-block
+    display: inline-block;
+}
+
+.myButton {
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .btn-shorten {
@@ -30,5 +36,46 @@
 }
 
 .tab {
-    margin: 10px 5%;
+    margin: 25px 2% 5% 2%;
 }
+
+.myTable {
+    border-collapse: separate;
+    border: solid black 2px;
+    border-radius: 10px;
+    -moz-border-radius: 15px;
+}
+
+.myCol {
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    border-left: solid black 2px;
+}
+
+.myTheadCol {
+    border-bottom: solid black 5px;
+}
+
+.myThead {
+    background-color: rgb(42, 112, 153);
+    color: azure;
+}
+
+.myTr:hover {
+    background-color: rgb(185, 218, 224);
+}
+
+.myColWidth {
+    min-width: 130px;
+}
+
+
+.linkGreen {
+    color: rgb(19, 160, 15);
+    font-weight: bolder
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+ }

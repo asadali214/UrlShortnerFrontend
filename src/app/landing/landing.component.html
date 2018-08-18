@@ -1,36 +1,50 @@
 <div class="main">
-<div class="fieldsDiv">
+  <div class="fieldsDiv">
 
-  <div class="longlinkDiv">
-    <label>Shorten your links:</label>
-    <input type="text" class="form-control" placeholder="Enter long url to shorten">
+    <div class="longlinkDiv">
+      <label>Shorten your links:</label>
+      <input type="text" [(ngModel)]="long" class="form-control" placeholder="Enter long url to shorten" (click)=clearLong()>
+    </div>
+    <div class="shortenButtonDiv">
+      <button class="btn btn-outline-success btn-block btn-shorten myButton" (click)=addLongUrl()>Shorten Link</button>
+    </div>
+    <div class="shortlinkDiv">
+      <a class="{{linkbar}}" href="{{short}}" target="_blank">
+        <input type="text" class="form-control linkGreen" value={{short}} disabled>
+      </a>
+    </div>
+
+
   </div>
-  <div class="shortenButtonDiv">
-    <button class="btn btn-info btn-block btn-shorten">Shorten Link</button>
+
+  <div class="tab">
+    <table class="table myTable">
+      <thead class="myThead">
+        <tr>
+          <th class="myTheadCol" scope="col">#</th>
+          <th class="myTheadCol" scope="col">Original URL</th>
+          <th class="myTheadCol" scope="col">Short URL</th>
+          <th class="myTheadCol" scope="col">Created On</th>
+          <th class="myTheadCol" scope="col">Valid for</th>
+          <th class="myTheadCol" scope="col">Clicks#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="myTr" *ngFor="let url of urls;let rowNum=index;">
+          <td class="myCol">{{rowNum+1}}</td>
+          <td class="myCol myColWidth">{{url.longUrl}}</td>
+          <td class="myCol">
+            <a class="linkGreen" routerLink="/dashboard">
+              {{url.shortUrl}}
+            </a>
+          </td>
+          <td class="myCol myColWidth">{{url.dateCreated}}</td>
+          <td class="myCol myColWidth">{{url.expiryDays}} days</td>
+          <td class="myCol">{{url.clicks.length}}</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
-  <div class="shortlinkDiv">
-    <input type="text" class="form-control" value="your_short_url" disabled>
-  </div>
-
-
-</div>
-
-<div class="tab">
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Original URL</th>
-        <th scope="col">Short URL</th>
-        <th scope="col">Created On</th>
-        <th scope="col">Clicks#</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
-  </table>
-
-</div>
 
 </div>
