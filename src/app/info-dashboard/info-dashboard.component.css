@@ -12,6 +12,7 @@
     height: 80px;
     background-color: rgb(180, 226, 222);
     border: solid rgb(9, 138, 63) 2px;
+    border-radius: 10px;
     padding: 10px;
 }
 
@@ -50,15 +51,20 @@
 }
 
 .lineGraph {
-    position: relative;
-    height: 40vh;
-    width: 40vw;
+    height: 360px;
+    width: 700px;
+    padding: 20px;
+    border: solid rgb(9, 138, 63) 2px;
+    border-radius: 10px;
     display: inline-block;
+    margin-top: 5%;
 }
 
 .pieGraph {
     width: 500px;
     height: 300px;
+    border: solid rgb(9, 138, 63) 2px;
+    border-radius: 10px;
     display: inline-block;
 }
 
@@ -66,5 +72,7 @@
     width: 500px;
     height: 300px;
     display: inline-block;
+    border: solid rgb(9, 138, 63) 2px;
+    border-radius: 10px;
     margin-left: 10%
 }

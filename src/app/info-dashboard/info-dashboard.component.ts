@@ -65,6 +65,12 @@ export class InfoDashboardComponent implements OnInit {
           {
             label: '# of Clicks',
             data: dateStats.data,
+            backgroundColor: [
+              'red',    // color for data at index 0
+              'blue',   // color for data at index 1
+              'green',  // color for data at index 2
+              'black'   // color for data at index 3
+            ],
             borderColor: '#3cba9f',
             fill: false
           }
@@ -72,21 +78,25 @@ export class InfoDashboardComponent implements OnInit {
       },
       options: {
         legend: {
-          display: false
+          display: false,
+          fontColor: 'black',
+          fontSize: 18
         },
         scales: {
           xAxes: [{
-            display: true
+            display: true,
+            fontSize: 18
           }],
           yAxes: [{
-            display: true
+            display: true,
+            fontSize: 18
           }]
         }
       }
     });
   }
 
-  createBrowsersPieGraph(browserStats: BrowserStats){
+  createBrowsersPieGraph(browserStats: BrowserStats) {
     this.chartPie = new Chart('chartPie', {
       type: 'pie',
       data: {
@@ -95,6 +105,12 @@ export class InfoDashboardComponent implements OnInit {
           {
             label: '# of Clicks',
             data: browserStats.data,
+            backgroundColor: [
+              'blue',    // color for data at index 0
+              'red',  // color for data at index 1
+              'green',  // color for data at index 2
+              'black'   // color for data at index 3
+            ],
             borderColor: '#3cba9f',
             fill: false
           }
@@ -102,21 +118,17 @@ export class InfoDashboardComponent implements OnInit {
       },
       options: {
         legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
-          yAxes: [{
-            display: true
-          }]
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black',
+            fontSize: 18
+          }
         }
       }
     });
   }
 
-  createPlatformBarGraph(platformStats: PlatformStats){
+  createPlatformBarGraph(platformStats: PlatformStats) {
     this.chartBar = new Chart('chartBar', {
       type: 'bar',
       data: {
@@ -125,6 +137,12 @@ export class InfoDashboardComponent implements OnInit {
           {
             label: '# of Clicks',
             data: platformStats.data,
+            backgroundColor: [
+              'red',    // color for data at index 0
+              'blue',   // color for data at index 1
+              'green',  // color for data at index 2
+              'black'   // color for data at index 3
+            ],
             borderColor: '#3cba9f',
             fill: false
           }
@@ -132,15 +150,21 @@ export class InfoDashboardComponent implements OnInit {
       },
       options: {
         legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
-          yAxes: [{
-            display: true
-          }]
+          labels: {
+            // This more specific font property overrides the global property
+            fontColor: 'black',
+            fontSize: 18
+          },
+          scales: {
+            xAxes: [{
+              display: true,
+              fontSize: 18
+            }],
+            yAxes: [{
+              display: true,
+              fontSize: 18
+            }]
+          }
         }
       }
     });
