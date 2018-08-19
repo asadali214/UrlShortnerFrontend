@@ -1,3 +1,36 @@
-<p>
-  info-dashboard works!
-</p>
+<div class="dashboard_head">
+  <div class="infoDiv" *ngIf="currentUrl">
+    <span class="fieldKey">Analytics for link:</span>
+    <a href="{{currentUrl.shortUrl}}" target="_blank">
+      <span class="fieldVal">{{currentUrl.shortUrl}}</span>
+    </a>
+    <br>
+    <span class="fieldKey">Created On:</span>
+    <span class="fieldVal">{{currentUrl.dateCreated}}</span>
+    <span class="fieldKey leftSpace">Validity Period:</span>
+    <span class="fieldVal">{{currentUrl.expiryDays}} days</span>
+    <br>
+    <span class="fieldKey">Original Link:</span>
+    <a href="{{currentUrl.longUrl}}" target="_blank">
+      <span class="fieldVal">{{currentUrl.longUrl}}</span>
+    </a>
+  </div>
+  <div class="clickDiv" *ngIf="currentUrl">
+    <span class="fieldKey">Total Clicks:</span>
+    <br>
+    <span class="fieldVal">{{currentUrl.clicks.length}}</span>
+  </div>
+</div>
+
+<div class="charts">
+  <div class="pieGraph" *ngIf="chartPie">
+    <canvas id="chartPie">{{ chart }}</canvas>
+  </div>
+  <div class="barGraph" *ngIf="chartBar">
+    <canvas id="chartBar">{{ chart }}</canvas>
+  </div>
+  <div class="lineGraph" *ngIf="chartLine">
+    <canvas id="chartLine">{{ chart }}</canvas>
+  </div>
+
+</div>

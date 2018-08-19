@@ -1,0 +1,70 @@
+.dashboard_head {
+    background-color: rgb(162, 206, 214);
+    color: rgb(13, 11, 151);
+    height: 120px;
+}
+
+.clickDiv {
+    float: right;
+    text-align: center;
+    margin: 25px 60px 0px 0px;
+    width: 180px;
+    height: 80px;
+    background-color: rgb(180, 226, 222);
+    border: solid rgb(9, 138, 63) 2px;
+    padding: 10px;
+}
+
+.infoDiv {
+    margin: 25px 0px 0px 60px;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.leftSpace {
+    margin-left: 40px;
+}
+
+.fieldKey {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.fieldVal {
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(9, 138, 63);
+}
+
+.charts {
+    margin: 5%;
+    text-align: center;
+    height: 900px;
+}
+
+.lineGraph {
+    position: relative;
+    height: 40vh;
+    width: 40vw;
+    display: inline-block;
+}
+
+.pieGraph {
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+}
+
+.barGraph {
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    margin-left: 10%
+}

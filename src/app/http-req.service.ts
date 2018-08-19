@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Url } from './models';
+import { Url, FullStats } from './models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
@@ -14,8 +14,8 @@ export class HttpReqService {
 
   GetAllApiUrl = "http://localhost:8080/url/function/get";
   AddNewApiUrl = "http://localhost:8080/url/function/add";
+  GetClickStatApiUrl = "http://localhost:8080/url/function/getClickFullStats/";//+id of url
 
-  
   constructor(private http: HttpClient) {
   }
 
@@ -26,4 +26,9 @@ export class HttpReqService {
   addnewUrl(longUrl): Observable<Url> {
     return this.http.post<Url>(this.AddNewApiUrl, longUrl, httpOptions);
   }
+
+  getClickStats(id): Observable<FullStats> {
+    return this.http.get<FullStats>(this.GetClickStatApiUrl+id);
+  }
+
 }

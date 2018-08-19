@@ -39,8 +39,12 @@ export class BrowserStats {
     data: number[];
 }
 
-export class UrlInfo {
+export class urlInfo {
     DateStats: DateStats;
     PlatformStats: PlatformStats;
     BrowserStats: BrowserStats;
+}
+
+export class FullStats{
+    urlInfo: urlInfo;
 }

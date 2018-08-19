@@ -25,14 +25,13 @@ export class LandingComponent implements OnInit {
   }
 
   getUrls(): void {
-    this.httpService.getUrls()
-      .subscribe(urls => this.updateUrls(urls));
+    this.httpService.getUrls().subscribe(urls => this.updateUrls(urls));
     //it will wait for the server to get the list of url
   }
 
   updateUrls(urls: Url[]){
     this.urls = urls;//table will refresh automatically when urls obj is changed..
-    this.data.changeUrls(this.urls);//passing urls array to data service..
+    this.data.sendUrls(this.urls);//passing urls array to data service..
   }
 
   addLongUrl() {
@@ -43,8 +42,6 @@ export class LandingComponent implements OnInit {
     }
     else {
       this.long = "Please insert a correct url!";
-      this.short = "";
-      this.linkbar= "disabled";
     }
   }
 
@@ -58,6 +55,8 @@ export class LandingComponent implements OnInit {
   
   clearLong() {
     this.long = "";
+    this.short = "";
+    this.linkbar= "disabled";
   }
 
   isUrl(s: string): boolean {//check url if its format is correct

@@ -12,7 +12,7 @@ export class DataService {
 
   constructor() { }
 
-  changeUrls(urls: Url[]) {
+  sendUrls(urls: Url[]) {
     this.messageSource.next(urls);
   }
 }
