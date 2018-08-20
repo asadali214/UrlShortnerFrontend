@@ -8,13 +8,15 @@ import { InfoDashboardComponent } from './info-dashboard/info-dashboard.componen
 import { AppRoutingModule } from './/app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { ExpiryComponent } from './expiry/expiry.component';
+import { NotExistComponent } from './not-exist/not-exist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     InfoDashboardComponent,
-    ExpiryComponent
+    ExpiryComponent,
+    NotExistComponent
   ],
   imports: [
     BrowserModule,

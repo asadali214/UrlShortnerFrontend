@@ -85,11 +85,15 @@ export class InfoDashboardComponent implements OnInit {
         scales: {
           xAxes: [{
             display: true,
-            fontSize: 18
+            ticks: {
+              padding: 1
+            }
           }],
           yAxes: [{
             display: true,
-            fontSize: 18
+            ticks: {
+              beginAtZero: true
+            }
           }]
         }
       }
@@ -106,8 +110,8 @@ export class InfoDashboardComponent implements OnInit {
             label: '# of Clicks',
             data: browserStats.data,
             backgroundColor: [
-              'blue',    // color for data at index 0
-              'red',  // color for data at index 1
+              'blue',   // color for data at index 0
+              'red',    // color for data at index 1
               'green',  // color for data at index 2
               'black'   // color for data at index 3
             ],
