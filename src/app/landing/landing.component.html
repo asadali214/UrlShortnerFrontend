@@ -9,7 +9,7 @@
       <button class="btn btn-outline-success btn-block btn-shorten myButton" (click)=addLongUrl()>Shorten Link</button>
     </div>
     <div class="shortlinkDiv">
-      <a class="{{linkbar}}" href="{{short}}" target="_blank">
+      <a class="{{linkbar}}" href="{{short}}" target="_blank" (click)=refresh()>
         <input type="text" class="form-control linkGreen {{linkbar}}" value={{short}} disabled>
       </a>
     </div>

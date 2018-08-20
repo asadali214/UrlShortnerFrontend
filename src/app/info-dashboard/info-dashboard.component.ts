@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Url, FullStats, DateStats, BrowserStats, PlatformStats } from '../models';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpReqService } from '../http-req.service';
 import { Chart } from 'chart.js';
 
@@ -22,6 +22,7 @@ export class InfoDashboardComponent implements OnInit {
   chartBar = [];
 
   constructor(private httpService: HttpReqService,
+    private router: Router,
     private route: ActivatedRoute,
     private data: DataService) { }
 
@@ -31,6 +32,13 @@ export class InfoDashboardComponent implements OnInit {
     //gets the data from landing component
   }
 
+  refresh(){
+    console.log("refreshDashboard");
+    this.data.sendUrls(null);
+    this.router.navigateByUrl("/notexist", {skipLocationChange: true}).then(()=>
+    this.router.navigateByUrl("/dashboard/"+this.index));
+  }
+
   populateDashboard(urls: Url[]) {
     if (urls == null) {
       this.httpService.getUrls().subscribe(urls => this.populateDashboard(urls));
@@ -38,8 +46,15 @@ export class InfoDashboardComponent implements OnInit {
     }
     else {
       this.urls = urls;
-      this.currentUrl = urls[this.index];
-      this.getFullClickStats(this.currentUrl.id);
+      if (this.index >= this.urls.length) {
+        this.index=0;
+        this.router.navigateByUrl("/notexist");
+      }
+      else {
+        this.currentUrl = urls[this.index];
+        this.getFullClickStats(this.currentUrl.id);
+      }
+
     }
   }
 

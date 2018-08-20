@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Url, LongUrl } from '../models';
 import { HttpReqService } from '../http-req.service';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,12 +17,19 @@ export class LandingComponent implements OnInit {
   short: String;
   long: string;
   linkbar: string;
-  constructor(private httpService: HttpReqService, private data: DataService) {
+  constructor(private httpService: HttpReqService, private data: DataService, private router: Router) {
     this.linkbar = "disabled";
   }
 
   ngOnInit() {
     this.getUrls();
+  }
+
+  refresh(){
+    console.log("refreshDashboard");
+    this.data.sendUrls(null);
+    this.router.navigateByUrl("/notexist", {skipLocationChange: true}).then(()=>
+    this.router.navigateByUrl("/home"));
   }
 
   getUrls(): void {

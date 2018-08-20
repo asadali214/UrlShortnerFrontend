@@ -1,7 +1,7 @@
 <div class="dashboard_head">
   <div class="infoDiv" *ngIf="currentUrl">
     <span class="fieldKey">Analytics for link:</span>
-    <a href="{{currentUrl.shortUrl}}" target="_blank">
+    <a href="{{currentUrl.shortUrl}}" target="_blank" (click)=refresh()>
       <span class="fieldVal">{{currentUrl.shortUrl}}</span>
     </a>
     <br>
