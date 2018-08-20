@@ -47,7 +47,8 @@
 .charts {
     margin: 5%;
     text-align: center;
-    height: 900px;
+    height: fit-content;
+    padding-bottom: 3%;
 }
 
 .lineGraph {

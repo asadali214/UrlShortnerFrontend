@@ -80,14 +80,8 @@ export class InfoDashboardComponent implements OnInit {
           {
             label: '# of Clicks',
             data: dateStats.data,
-            backgroundColor: [
-              'red',    // color for data at index 0
-              'blue',   // color for data at index 1
-              'green',  // color for data at index 2
-              'black'   // color for data at index 3
-            ],
             borderColor: '#3cba9f',
-            fill: false
+            fill: true
           }
         ]
       },
