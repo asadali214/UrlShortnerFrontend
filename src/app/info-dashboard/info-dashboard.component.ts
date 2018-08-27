@@ -54,7 +54,6 @@ export class InfoDashboardComponent implements OnInit {
         this.currentUrl = urls[this.index];
         this.getFullClickStats(this.currentUrl.id);
       }
-
     }
   }
 
